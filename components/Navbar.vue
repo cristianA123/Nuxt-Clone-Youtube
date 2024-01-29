@@ -17,8 +17,8 @@
     const  darkMode= ref(false);
 
     const toggleSidebar = () => {
-      console.log('tttttt')
-      emit('toggleSidebar'); // Emite un evento para que el componente principal maneje la apertura/cierre del Sidebar
+
+      emit('toggleSidebar');
     }
     const logout = () => {
       // Lógica para cerrar sesión
