@@ -9,14 +9,16 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify']
   },
+  // modules: ['@nuxtjs/axios'],
   modules:[
     [
       '@pinia/nuxt',
       {
         autoImports: ['defineStore']
-      }
-    ]
+      },
+    ],
   ],
+  
   imports:{
     dirs:['./stores']
   },
