@@ -1,5 +1,4 @@
 <script setup>
-import { VForm } from 'vuetify/lib/components/index.mjs';
 
 const authStore = useAuthStore()
 
@@ -43,6 +42,7 @@ const handleSubmit = async () => {
 
       const response = await login(email.value, password.value)
       if ( response.success ) {
+        authStore.login(response.user)
         await navigateTo('/admin')
         authError.value = false;
       } else {

@@ -35,13 +35,14 @@ export const useFirebaseAuth = () => {
             console.log(user);
             return {
                 success: true,
-                user
+                user: {
+                    uid: user.uid,
+                    email: user.email,
+                    displayName: user.displayName
+                }
             }
 
         } catch (error) {
-            // const errorCode = error.code;
-            // const errorMessage = error.message;
-            // console.log(errorCode, errorMessage);
             console.log(error)
             return {
                 success: false,

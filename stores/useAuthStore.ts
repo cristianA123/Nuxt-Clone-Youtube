@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 
-interface User {
-    username: string;
+  interface User {
+    displayNam?: string;
+    email: string;
+    uid: string;
   }
   
   interface AuthState {
@@ -15,10 +17,10 @@ interface User {
       user: null,
     }),
     actions: {
-      login(this: any, pin: string) {
-        console.log(pin)
+      login(this: any, user: User) {
+
         this.isAuthenticated = true;
-        this.user = { username: 'Cristian' }; 
+        this.user = user; 
       },
       logout(this: any) {
         this.isAuthenticated = false;
