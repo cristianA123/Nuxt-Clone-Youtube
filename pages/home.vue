@@ -23,7 +23,8 @@
 </script>
 
 <template>
-    <div class="h-screen w-screen px-4 py-16 sm:px-6 lg:px-8">
+    <Navbar />
+    <div class="h-screen w-screen px-4 sm:px-6 lg:px-8">
       <VideoList :videos="videos" />
     </div>
   </template>
