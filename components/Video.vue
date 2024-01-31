@@ -12,7 +12,7 @@
 
 
 <template>
-    <div class="border border-b-amber-400 p-2 border-box ">
+    <div class="p-2 border-box ">
         <figure >
             <img class="rounded-2xl" :src="video.snippet.thumbnails.medium.url" alt="padre">
         </figure>
@@ -23,7 +23,7 @@
                 </div>
             </figure>
             <div>
-                <h3 class="font-bold text-xl">{{ video.snippet.title }}</h3>
+                <h3 class="font-bold">{{ video.snippet.title }}</h3>
                 <p class="text-gray-500 text-sm flex flex-wrap">{{ video.snippet.channelTitle }}</p>
             </div>
         </div>

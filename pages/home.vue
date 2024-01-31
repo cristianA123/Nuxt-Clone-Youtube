@@ -23,8 +23,31 @@
 </script>
 
 <template>
+  <v-app>
+    <Navbar />
+    <div class="flex h-screen w-screen bg-miPrimary">
+      <!-- Barra lateral -->
+      <div class="w-20">
+        <Sidebar2 />
+      </div>
+      <!-- Contenido principal -->
+      <div class="flex-1  p-2 sm:px-6 lg:px-8">
+        <Tags />
+        <VideoList :videos="videos" />
+      </div>
+    </div>
+  </v-app>
+</template>
+
+<!-- <template>
+  <v-app>
     <Navbar />
     <div class="h-screen w-screen px-4 sm:px-6 lg:px-8">
-      <VideoList :videos="videos" />
+      <Sidebar2 class="bg-purple-400" />
+      <main class="bg-green-400">
+        <Tags />
+        <VideoList :videos="videos" />
+      </main>
     </div>
-  </template>
+  </v-app>
+  </template> -->

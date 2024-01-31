@@ -44,7 +44,7 @@
       </div>
 
  
-      <div class="flex items-center space-x-4 justify-center">
+      <div class="flex items-center space-x-8 justify-center">
         <v-icon class="font-light" icon="mdi-video-plus-outline"></v-icon>
         <v-icon class="font-light" icon="mdi-bell-outline"></v-icon>
         <img src="https://cdn.discordapp.com/attachments/965298358375841792/1202316904178384996/image.png?ex=65cd03df&is=65ba8edf&hm=4705e522d714ef60d75e640dcef2717e4316e06e9694a94f7343a87c5999f259&" alt="Avatar" class="h-8 w-8 rounded-full">
