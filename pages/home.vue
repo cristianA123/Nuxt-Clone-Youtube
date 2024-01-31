@@ -26,15 +26,13 @@
   <v-app>
     <Navbar />
     <div class="flex h-screen w-screen bg-miPrimary">
-      <!-- Barra lateral -->
       <div class="w-20">
         <Sidebar2 />
       </div>
-      <!-- Contenido principal -->
-      <div class="flex-1  p-2 sm:px-6 lg:px-8">
+      <main class="flex-1  p-2 sm:px-6 lg:px-8">
         <Tags />
         <VideoList :videos="videos" />
-      </div>
+      </main>
     </div>
   </v-app>
 </template>
