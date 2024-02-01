@@ -6,7 +6,6 @@
     const {videos} = useVideosStore()
 
     const axios = useNuxtApp().$axios
-    // const videos = ref([ ])
 
     onMounted(async () => {
       //   const { data } = await axios.get('https://youtube.googleapis.com/youtube/v3/search', {

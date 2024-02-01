@@ -1,18 +1,16 @@
 <script setup>
 
-    const props = defineProps({
-            videos: {
-                type: Object,
-                required: true
-            }
-        })
+    // const props = defineProps({
+    //         videos: {
+    //             type: Object,
+    //             required: true
+    //         }
+    //     })
 
-    const {setVideoSelected} = useVideosStore()
+    const {setVideoSelected, videos} = useVideosStore()
     
     const handleChangeVideo = async (video) => {
-        console.log('click 33')
         await setVideoSelected(video)
-        // await navigateTo('/video')
     }
 
 </script>

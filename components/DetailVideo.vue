@@ -1,19 +1,6 @@
 <script setup>
 
-    // const props = defineProps({
-    //     video: {
-    //         type: Object,
-    //         required: true
-    //     }
-    // })
-    const {videoSelected, videos} = useVideosStore()
-
-    // const videoSrc= ref(props.video.id.videoId);
-
-    // const chanfe = () => {
-    //     videoSrc.value = '9J6IVbkY0Bs';
-    //     console.log(props.video.kind)
-    // }
+    const {videoSelected, videos} = toRefs(useVideosStore())
 
 </script>
 
@@ -24,7 +11,7 @@
         <div class="flex justify-between">
             <div class="flex">
                 <div class="flex mr-4">
-                    <img class="h-12 rounded-full w-12 mr-2" src="https://i.ytimg.com/vi/k83VMCZnOro/mqdefault.jpg" alt="">
+                    <img class="h-12 rounded-full w-12 mr-2" :src="videoSelected.snippet.thumbnails.medium.url" alt="">
                     <div class="">
                         <p class="font-semibold">{{ videoSelected.snippet.channelTitle }}</p>
                         <p class="text-xs text-gray-400">24.2 k suscriptores</p>

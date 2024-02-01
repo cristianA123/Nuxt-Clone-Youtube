@@ -1,7 +1,6 @@
 <script setup>
 
     const { logout } = useFirebaseAuth()
-    const { videos} = useVideosStore()
 
     const axios = useNuxtApp().$axios
     // const videos = ref([ ])
@@ -61,7 +60,7 @@
               <PlayVideo  />
         </main>
         <div class="w-1/3 ">
-            <SideVideos :videos="videos"/>
+            <SideVideos />
         </div>
       </div>
     </v-app>

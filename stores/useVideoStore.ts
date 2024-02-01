@@ -1358,7 +1358,7 @@ export const useVideosStore = defineStore('videos', {
           }
         }
               ],
-      videoSelected: null
+      videoSelected: null,
     }),
   
     actions: {
@@ -1376,6 +1376,6 @@ export const useVideosStore = defineStore('videos', {
       clearVideos() {
         // this.videos = [];
       }
-    }
+    },
   });
 
