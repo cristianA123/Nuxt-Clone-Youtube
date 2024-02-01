@@ -1,5 +1,7 @@
 <script setup>
 
+    const {setVideoSelected} = useVideosStore()
+
     const props = defineProps({
         video: {
             type: Object,
@@ -7,8 +9,10 @@
         }
     })
 
-    const play = () => {
+    const play = async () => {
         console.log('play')
+        await setVideoSelected(props.video)
+        await navigateTo('/video')
         console.log(props.video)
         console.log('play')
     }

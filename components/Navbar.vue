@@ -11,13 +11,18 @@
     const logout = () => {
       // Lógica para cerrar sesión
     }
+
+    const handleHome = async () => {
+      await navigateTo('/home')
+    }
+
 </script>
 
 <template>
   <nav class="bg-miPrimary px-4 py-0">
     <div class="mx-auto flex justify-between items-center">
       <!-- Logo de YouTube -->
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center items-center" @click="handleHome">
         <div class=" flex justify-center items-center rounded-full hover:bg-miSecondary w-10 h-10 mr-4">
           <v-icon class="font-light" icon="mdi-menu"></v-icon>
         </div>

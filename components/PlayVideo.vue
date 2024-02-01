@@ -1,19 +1,10 @@
 <script setup>
 
-    const props = defineProps({
-        video: {
-            type: Object,
-            required: true
-        }
-    })
+    const {videoSelected, videos} = useVideosStore()
 
-    // const videoSrc= ref('rUYpww293Yg');
-    const videoSrc= ref(props.video.id.videoId);
 
-    const chanfe = () => {
-        videoSrc.value = '9J6IVbkY0Bs';
-        console.log(props.video.kind)
-    }
+    const videoSrc= ref(videoSelected.id.videoId);
+
 
 </script>
 
@@ -26,7 +17,7 @@
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen></iframe>
-            <DetailVideo :video="video"/>
+            <DetailVideo />
         <!-- <button @click="chanfe">cambiar</button> -->
     </div>
 </template>

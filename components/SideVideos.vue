@@ -1,18 +1,25 @@
 <script setup>
 
-const props = defineProps({
-        videos: {
-            type: Object,
-            required: true
-        }
-    })
+    const props = defineProps({
+            videos: {
+                type: Object,
+                required: true
+            }
+        })
 
+    const {setVideoSelected} = useVideosStore()
+    
+    const handleChangeVideo = async (video) => {
+        console.log('click 33')
+        await setVideoSelected(video)
+        // await navigateTo('/video')
+    }
 
 </script>
 
 <template>
     <div>
-        <div v-for="video in videos" :key="video.id" class="flex " >
+        <div v-for="video in videos" :key="video.id" class="flex " @click="handleChangeVideo(video)">
             <figure class="w-48 px-2 py-1">
                     <img class="rounded-lg " :src="video.snippet.thumbnails.medium.url" alt="padre">
             </figure>
