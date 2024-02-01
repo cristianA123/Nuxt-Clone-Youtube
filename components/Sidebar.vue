@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 ">
+  <div class="p-2 fixed top-14 z-50">
       <div class="flex justify-center items-center flex-col my-4 px-2 py-2 ">
           <v-icon class="font-light" icon="mdi-home-variant"></v-icon>
           <p class="text-xs" >Principal</p>

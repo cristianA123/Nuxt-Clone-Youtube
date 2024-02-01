@@ -6,8 +6,8 @@
 
 <template>
   <v-app>
-    <Navbar />
-    <div class="flex h-screen w-screen bg-miPrimary">
+      <Navbar  />
+    <div class="flex h-screen w-screen bg-miPrimary mt-14">
         <slot />
     </div>
   </v-app>

@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <nav class="bg-miPrimary px-4 py-0">
+  <nav class="bg-miPrimary px-4 py-0 fixed top-0 w-full z-50">
     <div class="mx-auto flex justify-between items-center">
       <!-- Logo de YouTube -->
       <div class="flex justify-center items-center" @click="handleHome">
@@ -47,8 +47,6 @@
           <v-icon class="font-light" icon="mdi-microphone"></v-icon>
         </div>
       </div>
-
- 
       <div class="flex items-center space-x-8 justify-center">
         <v-icon class="font-light" icon="mdi-video-plus-outline"></v-icon>
         <v-icon class="font-light" icon="mdi-bell-outline"></v-icon>

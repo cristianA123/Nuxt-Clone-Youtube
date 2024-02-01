@@ -12,7 +12,7 @@ const props = defineProps({
 
 
 <template>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       <Video v-for="video in videos" :key="video.id" :video="video"/>
    
     </div>
