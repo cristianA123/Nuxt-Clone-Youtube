@@ -10,11 +10,8 @@
     })
 
     const play = async () => {
-        console.log('play')
         await setVideoSelected(props.video)
         await navigateTo('/video')
-        console.log(props.video)
-        console.log('play')
     }
 
 

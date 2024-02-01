@@ -5,8 +5,6 @@
       middleware: 'auth'
     })
 
-    const { logout } = useFirebaseAuth()
-
     const { videos} = toRefs(useVideosStore())
     const {getVideos} = useVideosStore()
 

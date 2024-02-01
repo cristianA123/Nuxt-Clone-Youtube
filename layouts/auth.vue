@@ -1,12 +1,6 @@
 <script setup>
 useHead({
-    title: 'My App2',
-    meta: [
-    {
-        name: 'description',
-        content: 'My super-duper Nuxt app'
-    }
-    ]
+    title: 'Youtube',
 })
 </script>
 
