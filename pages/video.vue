@@ -1,7 +1,9 @@
 <script setup>
 
     const { logout } = useFirebaseAuth()
-
+    definePageMeta({
+      middleware: 'auth'
+    })
     const axios = useNuxtApp().$axios
     // const videos = ref([ ])
     // const videoSelected = ref({
@@ -53,16 +55,11 @@
 </script>
 
 <template>
-    <v-app>
-      <Navbar />
-      <div class="flex h-screen w-screen bg-miPrimary">
-        <main class="flex-1 h-full  p-2 sm:px-6 lg:px-8">
-              <PlayVideo  />
-        </main>
-        <div class="w-1/3 ">
-            <SideVideos />
-        </div>
-      </div>
-    </v-app>
+    <main class="flex-1 h-full  p-2 sm:px-6 lg:px-8">
+          <PlayVideo  />
+    </main>
+    <div class="w-1/3 ">
+        <SideVideos />
+    </div>
 </template>
 

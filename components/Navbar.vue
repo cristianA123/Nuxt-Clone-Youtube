@@ -13,7 +13,7 @@
     }
 
     const handleHome = async () => {
-      await navigateTo('/home')
+      await navigateTo('/')
     }
 
 </script>

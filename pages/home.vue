@@ -1,6 +1,10 @@
 
 <script setup>
 
+    definePageMeta({
+      middleware: 'auth'
+    })
+
     const { logout } = useFirebaseAuth()
 
     const {videos} = useVideosStore()
@@ -20,9 +24,6 @@
 </script>
 
 <template>
-  <v-app>
-    <Navbar />
-    <div class="flex h-screen w-screen bg-miPrimary">
       <div class="w-20">
         <Sidebar2 />
       </div>
@@ -30,19 +31,4 @@
         <Tags />
         <VideoList :videos="videos" />
       </main>
-    </div>
-  </v-app>
 </template>
-
-<!-- <template>
-  <v-app>
-    <Navbar />
-    <div class="h-screen w-screen px-4 sm:px-6 lg:px-8">
-      <Sidebar2 class="bg-purple-400" />
-      <main class="bg-green-400">
-        <Tags />
-        <VideoList :videos="videos" />
-      </main>
-    </div>
-  </v-app>
-  </template> -->

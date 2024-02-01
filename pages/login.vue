@@ -1,36 +1,39 @@
 <script setup>
+    definePageMeta({
+        layout: 'auth',
+    });
 
-const authStore = useAuthStore()
+  const authStore = useAuthStore()
 
-const { login } = useFirebaseAuth()
-
-
-const email = ref('');
-const password = ref('');
-const authError = ref(false);
-const passwordType = ref('password');
+  const { login } = useFirebaseAuth()
 
 
-const correoRules = [
-  (v) => !!v.trim() && v.length > 0 || 'El correo es requerido',
-  (v) => /.+@.+\..+/.test(v) || 'El formato del correo no es válido',
-];
+  const email = ref('');
+  const password = ref('');
+  const authError = ref(false);
+  const passwordType = ref('password');
 
-const passwordRules = [
-  (v) => !!v || 'La contraseña es requerida',
-  (v) => (v && v.length >= 6) || 'La contraseña debe tener al menos 8 caracteres',
-];
 
-const handleChangePasswordType = async (e) => {
+  const correoRules = [
+    (v) => !!v.trim() && v.length > 0 || 'El correo es requerido',
+    (v) => /.+@.+\..+/.test(v) || 'El formato del correo no es válido',
+  ];
 
-  if (passwordType.value === 'password') {
-    passwordType.value = 'text';
-  } else {
-    passwordType.value = 'password';
-  }
-};
+  const passwordRules = [
+    (v) => !!v || 'La contraseña es requerida',
+    (v) => (v && v.length >= 6) || 'La contraseña debe tener al menos 8 caracteres',
+  ];
 
-const form = ref(null);
+  const handleChangePasswordType = async (e) => {
+
+    if (passwordType.value === 'password') {
+      passwordType.value = 'text';
+    } else {
+      passwordType.value = 'password';
+    }
+  };
+
+  const form = ref(null);
 
 
 const handleSubmit = async () => {
@@ -43,7 +46,7 @@ const handleSubmit = async () => {
       const response = await login(email.value, password.value)
       if ( response.success ) {
         authStore.login(response.user)
-        await navigateTo('/admin')
+        await navigateTo('/')
         authError.value = false;
       } else {
         authError.value = true;
