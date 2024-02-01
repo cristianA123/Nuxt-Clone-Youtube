@@ -18,7 +18,7 @@
 
 <template>
       <div class="w-20">
-        <Sidebar2 />
+        <Sidebar />
       </div>
       <main class="flex-1  p-2 sm:px-6 lg:px-8">
         <Tags />

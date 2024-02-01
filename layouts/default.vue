@@ -1,4 +1,13 @@
 <script setup>
+  useHead({
+      title: 'My App',
+      meta: [
+      {
+          name: 'description',
+          content: 'My super-duper Nuxt app'
+      }
+      ]
+  })
 </script>
 
 <template>
