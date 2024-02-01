@@ -1,75 +1,35 @@
 # Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
 
 ## Development Server
+
+Crea ```.env``` y pega las variables de entorno de ```.env.example```
+
+```
+FIRE_APIKEY=""
+FIRE_AUTHDOMAIN=""
+FIRE_PROJECTID=""
+FIRE_STORAGEBUCKET=""
+FIRE_MESSAGINGSENDERID=""
+FIRE_APPID=""
+BASE_URL_YOUTUBE=""
+CLAVE_API_YOUTUBE=""
+```
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
+
+npm install
+
 # npm
 npm run dev
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+Usuario de prueba:
+`http://localhost:3000/login`
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+Username: testuser@example.com
+Password: testpassword123
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
