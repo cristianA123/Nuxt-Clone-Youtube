@@ -7,18 +7,11 @@
 
     const { logout } = useFirebaseAuth()
 
-    const {videos} = useVideosStore()
-
-    const axios = useNuxtApp().$axios
+    const { videos} = toRefs(useVideosStore())
+    const {getVideos} = useVideosStore()
 
     onMounted(async () => {
-      //   const { data } = await axios.get('https://youtube.googleapis.com/youtube/v3/search', {
-      // params: {
-      //   part: 'snippet',
-      //   type: 'video',
-      //   key: 'AIzaSyDOEpl-lbahEuTn4WA4PFAG9WAsmP82lq0',
-      //   maxResults: 40 
-      // }
+      await getVideos()
     });
        
 </script>
