@@ -55,6 +55,7 @@ interface VideoState {
   }
 
 export const useVideosStore = defineStore('videos', {
+  
     state: (): VideoState => ({
       // videos: [
       //   {
@@ -1364,12 +1365,13 @@ export const useVideosStore = defineStore('videos', {
   
     actions: {
       async getVideos() {
+        const runtimeConfig = useRuntimeConfig()
         const axios = useNuxtApp().$axios
-        const { data } = await axios.get('https://youtube.googleapis.com/youtube/v3/search', {
+        const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
           params: {
             part: 'snippet',
             type: 'video',
-            key: 'AIzaSyDOEpl-lbahEuTn4WA4PFAG9WAsmP82lq0',
+            key: runtimeConfig.public.claveApiYoutube,
             maxResults: 40 
           }
         });

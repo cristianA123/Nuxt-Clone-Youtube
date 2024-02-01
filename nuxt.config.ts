@@ -30,7 +30,9 @@ export default defineNuxtConfig({
       projectId: process.env.FIRE_PROJECTID,
       storageBucket: process.env.FIRE_STORAGEBUCKET,
       messagingSenderId: process.env.FIRE_MESSAGINGSENDERID,
-      appId: process.env.FIRE_APPID
+      appId: process.env.FIRE_APPID,
+      baseUrlYoutube: process.env.BASE_URL_YOUTUBE,
+      claveApiYoutube: process.env.CLAVE_API_YOUTUBE,
     }
   },
   postcss: {
