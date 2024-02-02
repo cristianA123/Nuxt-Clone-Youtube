@@ -1,4 +1,5 @@
 <script setup>
+    const {videosLoading} = toRefs(useVideosStore())
     const {setVideoSelected} = useVideosStore()
 
     const props = defineProps({
@@ -14,6 +15,7 @@
 </script>
 
 <template>
+    <!-- <v-skeleton-loader type="card-avatar"></v-skeleton-loader> -->
     <div class="p-2 border-box " @click="play">
         <figure class="cursor-pointer" >
             <img class="rounded-2xl" :src="video.snippet.thumbnails.medium.url" alt="padre">

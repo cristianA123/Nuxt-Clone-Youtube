@@ -52,28 +52,36 @@ export interface Default {
 interface VideoState {
     videos?: Item[] |string;
     videoSelected?: Item  | null ;
+    videosLoading: boolean
   }
 
 export const useVideosStore = defineStore('videos', {
   
     state: (): VideoState => ({
       videoSelected: null,
-      videos: [], 
+      videos: [],
+      videosLoading: true,
     }),
   
     actions: {
       async getVideos() {
+        this.videosLoading = true
         const runtimeConfig = useRuntimeConfig()
         const axios = useNuxtApp().$axios
-        const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
-          params: {
-            part: 'snippet',
-            type: 'video',
-            key: runtimeConfig.public.claveApiYoutube,
-            maxResults: 100
-          }
-        });
-        this.setVideos(data.items);
+        try {
+          const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
+            params: {
+              part: 'snippet',
+              type: 'video',
+              key: runtimeConfig.public.claveApiYoutube,
+              maxResults: 100
+            }
+          });
+          this.setVideos(data.items);
+          this.videosLoading = false
+        } catch (error) {
+          this.videosLoading = false
+        }
       },
       async getSearchVideos(search: string) {
         const runtimeConfig = useRuntimeConfig()
