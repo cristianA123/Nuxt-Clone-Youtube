@@ -64,17 +64,37 @@ export const useVideosStore = defineStore('videos', {
     }),
   
     actions: {
-      async getVideos() {
-        this.videosLoading = true
-        const runtimeConfig = useRuntimeConfig()
-        const axios = useNuxtApp().$axios
+      // async getVideos() {
+      //   try {
+      //   this.videosLoading = true
+      //   const runtimeConfig = useRuntimeConfig()
+      //   const axios = useNuxtApp().$axios
+      //     const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
+      //       params: {
+      //         part: 'snippet',
+      //         type: 'video',
+      //         key: runtimeConfig.public.claveApiYoutube,
+      //         maxResults: 100
+      //       }
+      //     });
+      //     this.setVideos(data.items);
+      //     this.videosLoading = false
+      //   } catch (error) {
+      //     this.videosLoading = false
+      //   }
+      // },
+      async getSearchVideos(search: string = '') {
         try {
+          this.videosLoading = true
+          const runtimeConfig = useRuntimeConfig()
+          const axios = useNuxtApp().$axios
           const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
             params: {
               part: 'snippet',
               type: 'video',
+              q: search,
               key: runtimeConfig.public.claveApiYoutube,
-              maxResults: 100
+              maxResults: 100 
             }
           });
           this.setVideos(data.items);
@@ -82,34 +102,6 @@ export const useVideosStore = defineStore('videos', {
         } catch (error) {
           this.videosLoading = false
         }
-      },
-      async getSearchVideos(search: string) {
-        const runtimeConfig = useRuntimeConfig()
-        const axios = useNuxtApp().$axios
-        const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
-          params: {
-            part: 'snippet',
-            type: 'video',
-            q: search,
-            key: runtimeConfig.public.claveApiYoutube,
-            maxResults: 40 
-          }
-        });
-        this.setVideos(data.items);
-      },
-      async getSearchVideosByTag(search: string) {
-        const runtimeConfig = useRuntimeConfig()
-        const axios = useNuxtApp().$axios
-        const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
-          params: {
-            part: 'snippet',
-            type: 'video',
-            q: search,
-            key: runtimeConfig.public.claveApiYoutube,
-            maxResults: 40 
-          }
-        });
-        this.setVideos(data.items);
       },
       setVideos(videos: Item[]) {
         this.videos = videos;

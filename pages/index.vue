@@ -6,10 +6,10 @@
     })
 
     const { videos} = toRefs(useVideosStore())
-    const {getVideos} = useVideosStore()
+    const {getSearchVideos} = useVideosStore()
 
     onMounted(async () => {
-      await getVideos()
+      await getSearchVideos()
     });
        
 </script>

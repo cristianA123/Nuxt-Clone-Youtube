@@ -1,5 +1,5 @@
 <script setup>
-    const {getSearchVideosByTag} = useVideosStore()
+    const {getSearchVideos} = useVideosStore()
     const  listTags= ref([
       {
         id: 1,
@@ -71,9 +71,8 @@
         name: 'Todos'
       })
     const searchVideoByTag = async (tag) => {
-      // console.log(tagSelected.value)
       tagSelected.value = tag
-      await getSearchVideosByTag(tag.name)
+      await getSearchVideos(tag.name)
     }
 </script>
 
