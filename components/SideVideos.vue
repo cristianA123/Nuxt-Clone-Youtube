@@ -1,11 +1,5 @@
 <script setup>
 
-    // const props = defineProps({
-    //         videos: {
-    //             type: Object,
-    //             required: true
-    //         }
-    //     })
 
     const {setVideoSelected, videos} = useVideosStore()
     
@@ -17,7 +11,7 @@
 
 <template>
     <div>
-        <div v-for="video in videos" :key="video.id" class="flex " @click="handleChangeVideo(video)">
+        <div v-for="video in videos" :key="video.id" class="flex cursor-pointer" @click="handleChangeVideo(video)">
             <figure class="w-48 px-2 py-1">
                     <img class="rounded-lg " :src="video.snippet.thumbnails.medium.url" alt="padre">
             </figure>

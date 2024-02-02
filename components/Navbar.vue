@@ -3,17 +3,19 @@
 
     const  search= ref('');
     const  darkMode= ref(false);
+    const { getSearchVideos } = useVideosStore()
 
     const toggleSidebar = () => {
 
       emit('toggleSidebar');
     }
-    const logout = () => {
-      // Lógica para cerrar sesión
-    }
 
     const handleHome = async () => {
       await navigateTo('/')
+    }
+
+    const handleSearch = async () => {
+      await getSearchVideos(search.value)
     }
 
 </script>
@@ -36,10 +38,12 @@
         <div class="flex justify-center items-center w-full">
           <input
             type="text"
+            v-model="search"
             placeholder="Buscar"
+            @keyup.enter="handleSearch" 
             class="w-full h-10 pl-8  border border-miBorder-2 rounded-l-full bg-miBg text-white focus:outline-none z-10 focus:border-miFocus focus:ring-miFocus focus:ring-1"
           />
-          <div class="w-20 h-10 flex justify-center items-center rounded-r-full bg-miSecondary">
+          <div class="w-20 h-10 flex justify-center items-center rounded-r-full bg-miSecondary" @click="handleSearch">
             <v-icon class="text-gray-500" icon="mdi-magnify" size="large"></v-icon>
           </div>
         </div>
