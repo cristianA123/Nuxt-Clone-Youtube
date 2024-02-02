@@ -1,6 +1,6 @@
 <script setup>
 
-    const {videoSelected, videos} = toRefs(useVideosStore())
+    const {videoSelected} = toRefs(useVideosStore())
 
 </script>
 

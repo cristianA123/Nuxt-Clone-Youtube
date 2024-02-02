@@ -89,6 +89,20 @@ export const useVideosStore = defineStore('videos', {
         });
         this.setVideos(data.items);
       },
+      async getSearchVideosByTag(search: string) {
+        const runtimeConfig = useRuntimeConfig()
+        const axios = useNuxtApp().$axios
+        const { data } = await axios.get(runtimeConfig.public.baseUrlYoutube, {
+          params: {
+            part: 'snippet',
+            type: 'video',
+            q: search,
+            key: runtimeConfig.public.claveApiYoutube,
+            maxResults: 40 
+          }
+        });
+        this.setVideos(data.items);
+      },
       setVideos(videos: Item[]) {
         this.videos = videos;
       },

@@ -7,11 +7,12 @@
 
   const { login } = useFirebaseAuth()
 
-
+  const form = ref(null);
   const email = ref('');
   const password = ref('');
   const authError = ref(false);
   const passwordType = ref('password');
+  const authLoading = ref(false)
 
 
   const correoRules = [
@@ -33,27 +34,22 @@
     }
   };
 
-  const form = ref(null);
-
-
 const handleSubmit = async () => {
-
   const { valid } = await form.value.validate();
-
   if (valid) {
     try {
-
+      authLoading.value = true
       const response = await login(email.value, password.value)
       if ( response.success ) {
         authStore.login(response.user)
         await navigateTo('/')
         authError.value = false;
+        authLoading.value = false
       } else {
         authError.value = true;
+        authLoading.value = false
       }
-
     } catch (error) {
-
       authError.value = true;
     }
   }
@@ -100,15 +96,14 @@ const handleSubmit = async () => {
         <p v-else class="opacity-0">.</p>
       </div>
 
-      <div class="flex items-center justify-between">
-        <p class="text-sm text-gray-500">
-          No account?
-          <a class="underline" href="">Sign up</a>
-        </p>
-
-        <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+      <div class="flex items-center justify-center">
+        <v-btn 
+          type="submit" 
+          class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+          :loading="authLoading"
+          >
           Iniciar Session
-        </button>
+        </v-btn>
       </div>
     </v-form>
   </div>
