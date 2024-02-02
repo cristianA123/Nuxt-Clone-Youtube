@@ -13,10 +13,12 @@ export const useFirebaseAuth = () => {
             );
     
             const user = userCredential.user;
-            // console.log(user);
 
         } catch (error) {
-            console.log(error)
+            return {
+                success: false,
+                msg: 'No se pudo crear el usuario'
+            }
         }
     }
 
@@ -29,7 +31,6 @@ export const useFirebaseAuth = () => {
             );
     
             const user = userCredential.user;
-            // console.log(user);
             return {
                 success: true,
                 user: {
@@ -40,7 +41,6 @@ export const useFirebaseAuth = () => {
             }
 
         } catch (error) {
-            // console.log(error)
             return {
                 success: false,
                 msg: 'Invalid credentials'

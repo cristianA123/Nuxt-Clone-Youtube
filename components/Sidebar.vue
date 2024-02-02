@@ -20,7 +20,4 @@
 </template>
 
 <script setup>
-
-    
-
 </script>

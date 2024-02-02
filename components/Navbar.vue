@@ -1,14 +1,6 @@
 <script setup>
-    const emit  = defineEmits(["toggleSidebar"]);
-
     const  search= ref('');
-    const  darkMode= ref(false);
     const { getSearchVideos } = useVideosStore()
-
-    const toggleSidebar = () => {
-
-      emit('toggleSidebar');
-    }
 
     const handleHome = async () => {
       await navigateTo('/')
@@ -17,7 +9,6 @@
     const handleSearch = async () => {
       await getSearchVideos(search.value)
     }
-
 </script>
 
 <template>

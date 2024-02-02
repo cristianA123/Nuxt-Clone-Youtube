@@ -1,5 +1,4 @@
 <script setup>
-
     const {setVideoSelected} = useVideosStore()
 
     const props = defineProps({
@@ -8,15 +7,11 @@
             required: true
         }
     })
-
     const play = async () => {
         await setVideoSelected(props.video)
         await navigateTo('/video')
     }
-
-
 </script>
-
 
 <template>
     <div class="p-2 border-box " @click="play">
@@ -36,4 +31,3 @@
         </div>
     </div>
   </template>
-  <!-- <iframe width="937" height="527" src="https://www.youtube.com/embed/EHnCPZyvL5A?list=RDEHnCPZyvL5A" title="Metal Family - Smell Like Cherry // Letra (Sub Español)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->

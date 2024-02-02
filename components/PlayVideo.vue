@@ -1,6 +1,6 @@
 <script setup>
     const {videoSelected} = toRefs(useVideosStore())  
-    // if( !isAuthenticated && to.path !== '/login') {
+
     if( !videoSelected) {
         navigateTo('/login')
     }

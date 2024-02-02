@@ -1,12 +1,9 @@
 <script setup>
-
-
     const {setVideoSelected, videos} = useVideosStore()
-    
+
     const handleChangeVideo = async (video) => {
         await setVideoSelected(video)
     }
-
 </script>
 
 <template>
